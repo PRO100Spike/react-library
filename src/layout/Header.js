@@ -1,6 +1,7 @@
 import React from 'react';
-
 import '../assets/css/header.css';
+
+
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function myFunction() {
@@ -12,16 +13,27 @@ function myFunction() {
     }
 }
 
-const Header = () => {
-  return (
+ const Header = () => {
+   return (
+  <div>
+       <div>
+       
+       </div>
+      
     <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+
+        <a href="/" class="active">Home</a>
+
+        <a href="/news">News</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
+        <a href ="/library">library</a>
+        
+
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
+    </div>
     </div>
   )
 }
