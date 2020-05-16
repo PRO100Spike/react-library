@@ -1,5 +1,13 @@
 import React from 'react';
 import '../assets/css/header.css';
+import About from './../view/About';
+import Contact from "./../view/Contact";
+import Home from "./../view/Home";
+import Library from "./../view/Library";
+import News from "./../view/News";
+
+import { Switch, Route, Link } from "react-router-dom";
+
 
 
 
@@ -13,6 +21,8 @@ function myFunction() {
     }
 }
 
+
+
  const Header = () => {
    return (
   <div>
@@ -20,22 +30,34 @@ function myFunction() {
        
        </div>
       
-    <div class="topnav" id="myTopnav">
+    <div className="topnav" id="myTopnav">
 
-        <a href="/" class="active">Home</a>
-
-        <a href="/news">News</a>
-        <a href="/contact">Contact</a>
-        <a href="/about">About</a>
-        <a href ="/library">library</a>
+      
+         <Link to="/" className="active">Home</Link> 
+        <Link to="/about">О нас</Link>
+        <Link to="/contact">Контакты</Link>
+        <Link to="/library">Библиотека</Link>
+        <Link to="/News">Новости</Link> 
         
 
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
+
+
+<Switch>   
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/library" component={Library} />
+          <Route path="/News" component={News} />
+ </Switch>
+        
+
+        {/* <link to="javascript:void(0);" className="svg" onClick="myFunction()">
+            <i className="fa fa-bars"></i>
+        </link> */}
     </div>
     </div>
   )
 }
+
 
 export default Header
